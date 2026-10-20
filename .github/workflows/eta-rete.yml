@@ -1,0 +1,32 @@
+name: Età probabile della rete (ISTAT)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/scarica_eta_istat.py
+      - .github/workflows/eta-rete.yml
+
+permissions:
+  contents: write
+
+jobs:
+  eta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyshp==2.3.1
+      - name: Test
+        run: python -m unittest discover -s tests -v
+      - name: Costruisci data/eta_rete.geojson dai dati ISTAT 2011
+        run: python scripts/scarica_eta_istat.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/eta_rete.geojson
+          git diff --cached --quiet || git commit -m "Aggiorna età probabile della rete dai dati ISTAT 2011"
+          git push
