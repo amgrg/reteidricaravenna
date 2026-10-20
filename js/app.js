@@ -399,6 +399,29 @@
   ];
   const classeEta = anno => CLASSI_ETA.find(c => anno <= c.fino);
 
+  // Area approssimata in km² (equirettangolare, sufficiente a scala comunale).
+  function areaKm2(geometria) {
+    let area = 0;
+    for (const poligono of geometria.coordinates) {
+      poligono.forEach((anello, i) => {
+        const k = Math.cos(anello[0][1] * Math.PI / 180) * 111.32;
+        let a = 0;
+        for (let j = 1; j < anello.length; j++) {
+          a += (anello[j - 1][0] * anello[j][1] - anello[j][0] * anello[j - 1][1]);
+        }
+        area += (i === 0 ? 1 : -1) * Math.abs(a / 2) * k * 110.57;
+      });
+    }
+    return Math.max(area, 1e-4);
+  }
+
+  // Le sezioni rurali (poche case sparse, poca rete) restano tenui;
+  // quelle urbane, dove passa la rete di distribuzione, sono piene.
+  function opacitaEta(f) {
+    const densita = f.properties.edifici / areaKm2(f.geometry);
+    return 0.12 + 0.6 * Math.min(1, densita / 300);
+  }
+
   function popupEta(p) {
     const c = classeEta(p.anno_medio);
     const epoche = Object.entries(p.epoche || {})
@@ -422,7 +445,7 @@
       const fc = await r.json();
       L.geoJSON(fc, {
         pane: 'eta',
-        style: f => ({ color: '#fff', weight: 0.4, fillColor: classeEta(f.properties.anno_medio).colore, fillOpacity: 0.6 }),
+        style: f => ({ color: '#fff', weight: 0.4, fillColor: classeEta(f.properties.anno_medio).colore, fillOpacity: opacitaEta(f) }),
         onEachFeature: (f, l) => l.bindPopup(popupEta(f.properties), { maxWidth: 300 })
       }).addTo(livelloEta);
       const vecchie = fc.features.filter(f => f.properties.anno_medio <= 1960).length;
