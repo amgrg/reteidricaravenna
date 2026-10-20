@@ -30,7 +30,7 @@ RADICE = Path(__file__).resolve().parent.parent
 USCITA = RADICE / "data" / "eta_rete.geojson"
 USER_AGENT = "reteidricaravenna/1.0 (+https://github.com/amgrg/reteidricaravenna)"
 URL_BASI = "https://www.istat.it/storage/cartografia/basi_territoriali/WGS_84_UTM/2011/R08_11_WGS84.zip"
-URL_DATI = "https://www.istat.it/storage/cartografia/variabili-censimento/dati-cpa_2011.zip"
+URL_DATI = "https://www.istat.it/storage/cartografia/variabili-censuarie/dati-cpa_2011.zip"
 PROCOM_RAVENNA = 39014
 
 # Classi di epoca del censimento 2011, con l'anno usato come valore centrale e il

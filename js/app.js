@@ -32,6 +32,9 @@
   const livelloImpianti = L.layerGroup().addTo(mappa);
   const livelloFontanelle = L.markerClusterGroup({ disableClusteringAtZoom: 17 });
   const livelloIdranti = L.markerClusterGroup({ disableClusteringAtZoom: 17 });
+  // Riquadro sotto gli altri livelli vettoriali (overlayPane ha z-index 400).
+  mappa.createPane('eta').style.zIndex = 350;
+  const livelloEta = L.layerGroup();
   const livelloRischio = L.layerGroup().addTo(mappa);
   const livelloIncertezza = L.layerGroup().addTo(mappa);
   const livelloGuasti = L.layerGroup().addTo(mappa);
@@ -39,6 +42,7 @@
   L.control.layers(basi, {
     'Guasti dalle notizie': livelloGuasti,
     'Rischio relativo (previsione)': livelloRischio,
+    'Età probabile della rete (ISTAT)': livelloEta,
     'Area di incertezza': livelloIncertezza,
     'Condotte (OSM)': livelloCondotte,
     'Impianti (OSM)': livelloImpianti,
@@ -382,6 +386,61 @@
     caricamentoEsterni.then(disegnaAllerta);
   }
 
+  // --- Età probabile della rete (ISTAT) -------------------------------------
+  // Classi sull'anno medio di costruzione degli edifici, con i materiali tipici
+  // posati in quell'epoca nelle reti italiane.
+  const CLASSI_ETA = [
+    { fino: 1945, colore: '#7f2704', nome: 'prima del 1946', materiali: 'ghisa grigia, acciaio' },
+    { fino: 1960, colore: '#b63c02', nome: '1946–1960', materiali: 'ghisa grigia, acciaio, primo fibrocemento' },
+    { fino: 1975, colore: '#e5590f', nome: '1961–1975', materiali: 'fibrocemento (cemento-amianto), acciaio' },
+    { fino: 1990, colore: '#fd9243', nome: '1976–1990', materiali: 'fibrocemento, PVC' },
+    { fino: 2005, colore: '#fdc28c', nome: '1991–2005', materiali: 'PVC, PEAD, ghisa sferoidale' },
+    { fino: Infinity, colore: '#feedde', nome: 'dopo il 2005', materiali: 'PEAD, ghisa sferoidale' }
+  ];
+  const classeEta = anno => CLASSI_ETA.find(c => anno <= c.fino);
+
+  function popupEta(p) {
+    const c = classeEta(p.anno_medio);
+    const epoche = Object.entries(p.epoche || {})
+      .filter(([, n]) => n > 0)
+      .map(([e, n]) => `<tr><td>${esc(e)}</td><td>${esc(n)}</td></tr>`).join('');
+    return `<div class="popup"><h3>Rete stimata: anni ${esc(c.nome)}</h3>
+      <p class="meta">Sezione di censimento ${esc(p.sez2011)} · ${esc(p.edifici)} edifici residenziali</p>
+      <p><b>Anno medio di costruzione:</b> ${esc(p.anno_medio)} · ${Math.round(p.quota_pre1961 * 100)}% prima del 1961</p>
+      <p><b>Materiali tipici dell'epoca:</b> ${esc(c.materiali)}</p>
+      <table class="meta">${epoche}</table>
+      <p class="meta">Stima dall'età degli edifici (ISTAT 2011): non considera le sostituzioni successive.</p></div>`;
+  }
+
+  async function caricaEta() {
+    const stato = document.getElementById('stato-eta');
+    document.getElementById('legenda-eta').innerHTML = CLASSI_ETA.map(c =>
+      `<li><i style="background:${c.colore}"></i>${esc(c.nome)} <small>${esc(c.materiali)}</small></li>`).join('');
+    try {
+      const r = await fetch('data/eta_rete.geojson', { cache: 'no-cache' });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const fc = await r.json();
+      L.geoJSON(fc, {
+        pane: 'eta',
+        style: f => ({ color: '#fff', weight: 0.4, fillColor: classeEta(f.properties.anno_medio).colore, fillOpacity: 0.6 }),
+        onEachFeature: (f, l) => l.bindPopup(popupEta(f.properties), { maxWidth: 300 })
+      }).addTo(livelloEta);
+      const vecchie = fc.features.filter(f => f.properties.anno_medio <= 1960).length;
+      stato.textContent = `${fc.features.length} sezioni di censimento; ${vecchie} con edifici mediamente costruiti prima del 1961.`;
+    } catch (err) {
+      stato.textContent = `Dati ISTAT non ancora disponibili (${err.message}).`;
+      document.getElementById('mostra-eta').disabled = true;
+    }
+  }
+
+  const casellaEta = document.getElementById('mostra-eta');
+  casellaEta.addEventListener('change', () => {
+    if (casellaEta.checked) livelloEta.addTo(mappa); else livelloEta.remove();
+  });
+  mappa.on('overlayadd overlayremove', e => {
+    if (e.layer === livelloEta) casellaEta.checked = e.type === 'overlayadd';
+  });
+
   // --- Pannello -----------------------------------------------------------
   document.getElementById('toggle-pannello').addEventListener('click', e => {
     const pannello = document.getElementById('pannello');
@@ -392,4 +451,5 @@
 
   caricaGuasti();
   caricaReteOSM();
+  caricaEta();
 })();
