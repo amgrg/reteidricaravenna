@@ -32,11 +32,13 @@
   const livelloImpianti = L.layerGroup().addTo(mappa);
   const livelloFontanelle = L.markerClusterGroup({ disableClusteringAtZoom: 17 });
   const livelloIdranti = L.markerClusterGroup({ disableClusteringAtZoom: 17 });
+  const livelloRischio = L.layerGroup().addTo(mappa);
   const livelloIncertezza = L.layerGroup().addTo(mappa);
   const livelloGuasti = L.layerGroup().addTo(mappa);
 
   L.control.layers(basi, {
     'Guasti dalle notizie': livelloGuasti,
+    'Rischio relativo (previsione)': livelloRischio,
     'Area di incertezza': livelloIncertezza,
     'Condotte (OSM)': livelloCondotte,
     'Impianti (OSM)': livelloImpianti,
@@ -196,6 +198,7 @@
     const fc = await r.json();
     guasti = fc.features.concat(segnalazioniLocali());
     disegnaGuasti();
+    aggiornaPrevisione();
     if (markerPerId.size) mappa.fitBounds(L.featureGroup([...markerPerId.values()]).getBounds(), { padding: [30, 30] });
   }
 
@@ -253,6 +256,7 @@
       salvaSegnalazioniLocali(locali);
       guasti.push(feature);
       disegnaGuasti();
+      aggiornaPrevisione();
       vaiAlGuasto(feature.properties.id);
       esito.textContent = `Aggiunto: ${hit.display_name}`;
       form.reset();
@@ -322,6 +326,60 @@
     } catch (err) {
       stato.textContent = `Rete OSM non disponibile (${err.message}). I guasti restano consultabili.`;
     }
+  }
+
+  // --- Previsione ------------------------------------------------------------
+  const P = window.Previsione;
+  const datiEsterni = {};
+  const caricamentoEsterni = Promise.all([
+    P.caricaMeteo().then(d => { datiEsterni.meteo = d; }).catch(() => {}),
+    P.caricaTerremoti().then(d => { datiEsterni.terremoti = d; }).catch(() => {})
+  ]);
+
+  function coloreRischio(v) {
+    // da giallo (basso) a rosso (alto)
+    const g = Math.round(235 - 168 * v);
+    return `rgb(${Math.round(255 - 11 * v)},${g},${Math.round(59 - 5 * v)})`;
+  }
+
+  function disegnaGrigliaRischio() {
+    livelloRischio.clearLayers();
+    for (const c of P.grigliaRischio(guasti, new Date(), { incertezza: INCERTEZZA })) {
+      L.rectangle([[c.sud, c.ovest], [c.nord, c.est]], {
+        stroke: false, fillColor: coloreRischio(c.valore), fillOpacity: 0.12 + 0.43 * c.valore, interactive: false
+      }).addTo(livelloRischio);
+    }
+  }
+
+  function disegnaAllerta() {
+    const a = P.calcolaAllerta(guasti, datiEsterni.meteo, datiEsterni.terremoti);
+    const box = document.getElementById('allerta');
+    box.className = `allerta ${a.livello}`;
+    box.innerHTML = `<span class="livello">Allerta ${esc({ basso: 'bassa', moderato: 'moderata', elevato: 'elevata' }[a.livello])}</span>
+      <span class="punteggio">${Math.round(a.totale)}/100 · prossimi 7 giorni</span>
+      <span class="prob">Probabilità di almeno un guasto riportato dalla stampa: <b>${Math.round(a.probabilita7 * 100)}%</b> in 7 giorni, <b>${Math.round(a.probabilita30 * 100)}%</b> in 30 giorni.</span>`;
+    const massimi = { 'Effetto cascata': 40, 'Frequenza storica': 20, 'Meteo (7 giorni)': 50, 'Meteo': 50, 'Sismicità (14 giorni)': 40, 'Sismicità': 40 };
+    document.getElementById('fattori').innerHTML = a.fattori.map(f => `<li>
+      <b>${esc(f.nome)}</b> +${Math.round(f.punti)}
+      <div class="barra"><i style="width:${Math.min(100, 100 * f.punti / (massimi[f.nome] || 40))}%"></i></div>
+      <span class="testo">${esc(f.testo)}</span></li>`).join('');
+  }
+
+  function disegnaZoneCalde() {
+    const zone = P.zoneCalde(guasti).slice(0, 5);
+    const ol = document.getElementById('zone-calde');
+    ol.innerHTML = zone.map((z, i) => `<li data-i="${i}" tabindex="0">${esc(z.nome)} — ${z.conteggio} ${z.conteggio === 1 ? 'guasto' : 'guasti'}, ultimo ${esc(dataLeggibile(z.ultimo))}</li>`).join('');
+    ol.onclick = e => {
+      const li = e.target.closest('li[data-i]');
+      if (li) { const [lon, lat] = zone[li.dataset.i].centro; mappa.flyTo([lat, lon], 14, { duration: 0.6 }); }
+    };
+  }
+
+  function aggiornaPrevisione() {
+    disegnaGrigliaRischio();
+    disegnaZoneCalde();
+    disegnaAllerta();
+    caricamentoEsterni.then(disegnaAllerta);
   }
 
   // --- Pannello -----------------------------------------------------------

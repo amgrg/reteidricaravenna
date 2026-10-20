@@ -11,6 +11,21 @@ Visualizzatore web, interamente open source, della rete idrica del Comune di Rav
 - Filtri per periodo, impatto e testo; lista cronologica; statistiche.
 - **Aggiunta manuale** di un guasto da una notizia: si inserisce l'indirizzo, viene geocodificato con Nominatim e salvato nel browser; «Esporta GeoJSON» permette di riportarlo nel repository.
 
+## Previsione dei prossimi guasti
+
+Il pannello «Previsione prossimi guasti» (`js/previsione.js`) calcola nel browser:
+
+- un **indice di allerta a 7 giorni** (0–100: bassa, moderata, elevata), somma di fattori espliciti:
+  - **effetto cascata**: dopo una rottura importante, la rimessa in pressione causa spesso nuove rotture (gennaio 2026: quattro rotture in 24 ore dopo viale Farini);
+  - **frequenza storica** dei guasti negli ultimi 12 mesi;
+  - **meteo** da [Open-Meteo](https://open-meteo.com): gelo, caldo estremo, sbalzi termici;
+  - **sismicità** da [INGV](https://terremoti.ingv.it): scosse recenti vicino a Ravenna;
+- la **probabilità** di almeno un guasto riportato dalla stampa in 7 e 30 giorni (processo di Poisson sul tasso osservato);
+- una **mappa di rischio relativo**: densità dei guasti passati, pesata per impatto, con emivita di 2 anni e con un peso ridotto per le posizioni incerte;
+- l'elenco delle **zone con più rotture ripetute**.
+
+È una stima trasparente su pochi dati pubblici, non un modello addestrato: indica dove la rete si è già dimostrata fragile e quando le condizioni sono sfavorevoli. Più guasti vengono registrati, più la stima diventa affidabile.
+
 ## Strumenti open source usati
 
 | Componente | Strumento | Licenza |
@@ -20,6 +35,8 @@ Visualizzatore web, interamente open source, della rete idrica del Comune di Rav
 | Rete idrica | [Overpass API](https://overpass-api.de) | ODbL |
 | Geocodifica | [Nominatim](https://nominatim.org) | ODbL |
 | Notizie | Google News RSS + feed RSS configurabili | – |
+| Meteo | [Open-Meteo](https://open-meteo.com) | CC BY 4.0 |
+| Terremoti | [INGV FDSN web services](https://webservices.ingv.it) | CC BY 4.0 |
 | Script | Python 3, solo libreria standard | – |
 
 ## Avvio
@@ -31,7 +48,7 @@ python3 -m http.server 8000
 # poi apri http://localhost:8000
 ```
 
-Si può pubblicare così com'è su GitHub Pages, oppure su Railway: il `Dockerfile` serve il sito con Caddy sulla porta `$PORT` (configurazione in `railway.json`).
+Si può pubblicare così com'è su GitHub Pages, oppure su Railway (online su https://web-production-869e9.up.railway.app): il `Dockerfile` serve il sito con Caddy sulla porta `$PORT` (configurazione in `railway.json`).
 
 ## Aggiornare i dati
 

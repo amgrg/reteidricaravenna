@@ -21,6 +21,25 @@
     <aside id="pannello" class="pannello">
       <section class="stat-row" id="statistiche" aria-live="polite"></section>
 
+      <section class="blocco previsione" aria-live="polite">
+        <h2>Previsione prossimi guasti</h2>
+        <div id="allerta" class="allerta">Calcolo in corso…</div>
+        <ul id="fattori" class="fattori"></ul>
+        <h3>Zone con più rotture ripetute</h3>
+        <ol id="zone-calde" class="zone-calde"></ol>
+        <details class="metodo">
+          <summary>Come è calcolata</summary>
+          <p>Indice indicativo per i prossimi 7 giorni, somma di quattro fattori (0–100):</p>
+          <ul>
+            <li><b>Effetto cascata</b> (fino a 40): dopo una rottura importante la rimessa in pressione può causarne altre. A gennaio 2026, dopo viale Farini, se ne sono rotte altre quattro in 24 ore.</li>
+            <li><b>Frequenza storica</b> (fino a 20): tasso di guasti degli ultimi 12 mesi, trattati come eventi casuali indipendenti (processo di Poisson).</li>
+            <li><b>Meteo</b> (fino a 50, da <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>): gelo, caldo oltre 33 °C, sbalzi termici.</li>
+            <li><b>Sismicità</b> (fino a 40, da <a href="https://terremoti.ingv.it/" target="_blank" rel="noopener">INGV</a>): scosse recenti vicino a Ravenna, citate da Hera come concausa.</li>
+          </ul>
+          <p>La mappa del rischio è la densità dei guasti passati, pesata per impatto e con un'emivita di 2 anni: indica dove la rete si è già dimostrata fragile, non dove si romperà. È una stima su dati pubblici e pochi eventi: non sostituisce i dati di Hera.</p>
+        </details>
+      </section>
+
       <section class="blocco">
         <h2>Filtri</h2>
         <label class="campo">
@@ -85,6 +104,7 @@
           <li><i class="simbolo impianto"></i>Impianti (serbatoi, potabilizzatori, pompaggi, pozzi)</li>
           <li><i class="simbolo fontanella"></i>Fontanelle</li>
           <li><i class="simbolo idrante"></i>Idranti</li>
+          <li><i class="rischio"></i>Rischio relativo (previsione)</li>
         </ul>
         <p class="nota">Il cerchio tratteggiato attorno a un guasto indica l'incertezza della posizione: le notizie citano una via o una località, non il punto esatto.</p>
       </section>
@@ -93,6 +113,8 @@
         Mappa © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors (ODbL) ·
         Geocodifica <a href="https://nominatim.org/">Nominatim</a> ·
         Rete via <a href="https://overpass-api.de/">Overpass API</a> ·
+        Meteo <a href="https://open-meteo.com/">Open-Meteo</a> ·
+        Terremoti <a href="https://terremoti.ingv.it/">INGV</a> ·
         <a href="https://leafletjs.com/">Leaflet</a>.<br>
         Guasti in tempo reale: Pronto Intervento Hera <a href="tel:800713900">800 713 900</a>.
       </footer>
@@ -104,6 +126,7 @@
   <script src="vendor/leaflet/leaflet.js"></script>
   <script src="vendor/markercluster/leaflet.markercluster.js"></script>
   <script src="js/osm.js"></script>
+  <script src="js/previsione.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
