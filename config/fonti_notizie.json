@@ -1,0 +1,21 @@
+{
+  "google_news_query": [
+    "guasto rete idrica Ravenna",
+    "rottura condotta acqua Ravenna",
+    "tubatura rotta Ravenna Hera",
+    "senz'acqua Ravenna Hera",
+    "interruzione acqua Ravenna Hera"
+  ],
+  "feed_rss": [],
+  "localita": [
+    "Marina di Ravenna", "Punta Marina", "Lido Adriano", "Lido di Dante", "Lido di Classe",
+    "Lido di Savio", "Marina Romea", "Porto Corsini", "Casalborsetti", "Classe", "Ponte Nuovo",
+    "Madonna dell'Albero", "Porto Fuori", "San Bartolo", "Fosso Ghiaia", "Savio",
+    "Castiglione di Ravenna", "Mezzano", "Sant'Alberto", "Piangipane", "Santerno", "Ammonite",
+    "Camerlona", "Savarna", "Grattacoppa", "Conventello", "Torri", "San Michele",
+    "Fornace Zarattini", "Roncalceci", "San Pietro in Vincoli", "San Pietro in Campiano",
+    "Coccolia", "Ghibullo", "Filetto", "Ducenta", "Carraie", "Durazzano", "Massa Castello",
+    "Campiano", "Gambellara", "San Zaccaria", "Osteria", "Santo Stefano", "Mandriole",
+    "Borgo Montone", "Borgo San Rocco", "Borgo San Biagio", "Darsena", "Glorie"
+  ]
+}

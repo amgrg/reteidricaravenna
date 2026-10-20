@@ -1,0 +1,218 @@
+:root {
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --text: #1b2430;
+  --muted: #5b6776;
+  --border: #d9e0e7;
+  --accent: #0b6fb8;
+  --alto: #c62828;
+  --medio: #ef8a17;
+  --basso: #e3c22b;
+  --condotta: #1a73e8;
+  --impianto: #0d47a1;
+  --fontanella: #00acc1;
+  --idrante: #d81b60;
+  --radius: 8px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161c;
+    --surface: #1a2129;
+    --text: #e6edf3;
+    --muted: #9aa7b4;
+    --border: #2d3742;
+    --accent: #58a6ff;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+a { color: var(--accent); }
+
+.topbar {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  height: 52px;
+  padding: 0 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.topbar h1 { margin: 0; font-size: 18px; line-height: 52px; }
+.sottotitolo { color: var(--muted); font-size: 13px; }
+
+.icon-btn {
+  align-self: center;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: var(--radius);
+  width: 34px;
+  height: 34px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.layout {
+  display: flex;
+  height: calc(100% - 52px);
+}
+
+.pannello {
+  width: 360px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 12px 16px 24px;
+}
+.pannello.chiuso { display: none; }
+
+.mappa { flex: 1; min-width: 0; }
+
+.blocco { margin-top: 18px; }
+.blocco h2 { font-size: 14px; margin: 0 0 8px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.blocco h2 small { text-transform: none; letter-spacing: 0; }
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.stat {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+}
+.stat b { display: block; font-size: 20px; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 12px; }
+
+.campo { display: flex; flex-direction: column; gap: 3px; margin-bottom: 8px; flex: 1; }
+.campo span { font-size: 12px; color: var(--muted); }
+.campo-riga { display: flex; gap: 8px; }
+input, select, button {
+  font: inherit;
+  color: var(--text);
+}
+input, select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+}
+
+.chips { border: 0; padding: 0; margin: 4px 0 8px; display: flex; gap: 12px; flex-wrap: wrap; }
+.chips legend { font-size: 12px; color: var(--muted); padding: 0; margin-bottom: 4px; }
+.chips label, .check { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+.chips input, .check input { width: auto; }
+
+.pallino { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+.pallino.alto { background: var(--alto); }
+.pallino.medio { background: var(--medio); }
+.pallino.basso { background: var(--basso); }
+
+.lista { list-style: none; margin: 0; padding: 0; }
+.lista li {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--medio);
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+.lista li:hover, .lista li:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.lista li.alto { border-left-color: var(--alto); }
+.lista li.basso { border-left-color: var(--basso); }
+.lista .data { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.lista .titolo { font-weight: 600; display: block; }
+.lista .luogo { color: var(--muted); font-size: 12px; }
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  margin-left: 4px;
+}
+.badge.auto { border-color: var(--medio); color: var(--medio); }
+
+.form button, button.secondario {
+  border: 0;
+  border-radius: 6px;
+  padding: 7px 12px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+button.secondario { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+details summary { cursor: pointer; font-weight: 600; margin-bottom: 8px; }
+.nota { color: var(--muted); font-size: 12px; }
+
+.legenda ul { list-style: none; padding: 0; margin: 0; }
+.legenda li { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+.linea { display: inline-block; width: 22px; height: 3px; background: var(--condotta); }
+.simbolo { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.3); }
+.simbolo.impianto { background: var(--impianto); border-radius: 2px; }
+.simbolo.fontanella { background: var(--fontanella); }
+.simbolo.idrante { background: var(--idrante); }
+
+.allerta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--basso);
+}
+.allerta.moderato { border-left-color: var(--medio); }
+.allerta.elevato { border-left-color: var(--alto); }
+.allerta .livello { font-size: 18px; font-weight: 700; text-transform: capitalize; }
+.allerta .punteggio { color: var(--muted); font-variant-numeric: tabular-nums; }
+.allerta .prob { flex-basis: 100%; font-size: 13px; }
+.fattori { list-style: none; padding: 0; margin: 8px 0; }
+.fattori li { margin: 6px 0; }
+.fattori .barra { height: 4px; background: var(--border); border-radius: 2px; margin-top: 3px; }
+.fattori .barra i { display: block; height: 100%; background: var(--accent); border-radius: 2px; }
+.fattori .testo { color: var(--muted); font-size: 12px; }
+.previsione h3 { font-size: 13px; margin: 12px 0 6px; }
+.zone-calde { margin: 0; padding-left: 20px; }
+.zone-calde li { cursor: pointer; margin: 3px 0; }
+.zone-calde li:hover { text-decoration: underline; }
+.metodo { margin-top: 10px; font-size: 12px; color: var(--muted); }
+.metodo summary { font-weight: 600; color: var(--text); }
+.metodo ul { padding-left: 18px; }
+.rischio { display: inline-block; width: 22px; height: 12px; background: linear-gradient(90deg, rgba(255,235,59,.5), rgba(244,67,54,.7)); border-radius: 2px; }
+
+.crediti { margin-top: 24px; font-size: 12px; color: var(--muted); }
+
+.popup h3 { margin: 0 0 4px; font-size: 14px; }
+.popup p { margin: 4px 0; }
+.popup ul { margin: 4px 0 0; padding-left: 18px; }
+.popup .meta { color: #5b6776; font-size: 12px; }
+
+@media (max-width: 760px) {
+  .sottotitolo { display: none; }
+  .layout { flex-direction: column-reverse; }
+  .pannello {
+    width: 100%;
+    height: 45%;
+    border-right: 0;
+    border-top: 1px solid var(--border);
+  }
+  .mappa { flex: 1; min-height: 0; }
+}
