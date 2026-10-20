@@ -31,7 +31,7 @@ python3 -m http.server 8000
 # poi apri http://localhost:8000
 ```
 
-Si può pubblicare così com'è su GitHub Pages.
+Si può pubblicare così com'è su GitHub Pages, oppure su Railway: il `Dockerfile` serve il sito con Caddy sulla porta `$PORT` (configurazione in `railway.json`).
 
 ## Aggiornare i dati
 

@@ -1,0 +1,12 @@
+{
+	admin off
+}
+
+:{$PORT:8080} {
+	root * /srv
+	encode gzip
+	@dati path /data/* /config/*
+	header @dati Cache-Control "no-cache"
+	header /vendor/* Cache-Control "public, max-age=604800"
+	file_server
+}
