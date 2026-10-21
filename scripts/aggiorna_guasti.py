@@ -66,7 +66,9 @@ def estrai_vie(testo):
     risultati = []
     for m in re.finditer(rf"\b({PREFISSI})\s+", testo, re.I):
         parole = []
-        for tok in re.findall(r"[\wÀ-ÿ'’]+", testo[m.end():m.end() + 80]):
+        # Il nome finisce alla prima punteggiatura: "via Baccarini. Residenti…"
+        segmento = re.split(r"[.,;:!?()\[\]\"«»–—]| - ", testo[m.end():m.end() + 80])[0]
+        for tok in re.findall(r"[\wÀ-ÿ'’]+", segmento):
             t = tok.replace("’", "'")
             if t[:1].isupper() or t[:1].isdigit():
                 parole.append(t)
@@ -182,16 +184,25 @@ def distanza_m(a, b):
     return 6371000 * math.hypot(x, y)
 
 
+def varianti_via(via):
+    """'via Baccarini Dove' -> ['via Baccarini Dove', 'via Baccarini']: nei titoli
+    le parole dopo il nome della via sono spesso maiuscole."""
+    parole = via.split()
+    varianti = [" ".join(parole[:n]) for n in range(len(parole), 1, -1)]
+    return [v for v in varianti if v.split()[-1].lower() not in CONNETTORI]
+
+
 def localizza(notizia, geo, localita):
     """Prova prima le vie citate, poi le località; restituisce (punto, precisione, luogo)."""
     testo = f"{notizia['titolo']}. {notizia['testo']}"
     vie = estrai_vie(testo)
     loc = estrai_localita(testo, localita)
     for via in vie:
-        contesto = f"{via}, {loc[0]}" if loc else via
-        hit = geo.cerca(contesto) or (geo.cerca(via) if loc else None)
-        if hit:
-            return hit, "via", via
+        for candidata in varianti_via(via):
+            contesto = f"{candidata}, {loc[0]}" if loc else candidata
+            hit = geo.cerca(contesto) or (geo.cerca(candidata) if loc else None)
+            if hit:
+                return hit, "via", candidata
     for l in loc:
         hit = geo.cerca(l)
         if hit:
