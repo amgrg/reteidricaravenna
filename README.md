@@ -26,6 +26,14 @@ Il pannello «Previsione prossimi guasti» (`js/previsione.js`) calcola nel brow
 
 È una stima trasparente su pochi dati pubblici, non un modello addestrato: indica dove la rete si è già dimostrata fragile e quando le condizioni sono sfavorevoli. Più guasti vengono registrati, più la stima diventa affidabile.
 
+## Età probabile della rete
+
+Non esiste un dato pubblico sull'età delle condotte di Ravenna: lo ha solo Hera. Il livello «Età probabile della rete» la stima dall'**epoca di costruzione degli edifici residenziali** di ogni sezione di censimento (ISTAT, Censimento 2011), perché le condotte di distribuzione si posano di solito quando si costruisce un quartiere. Per ogni epoca la mappa indica i materiali tipici posati in quegli anni. La stima non tiene conto delle condotte sostituite dopo la posa.
+
+`scripts/scarica_eta_istat.py` scarica le basi territoriali e le variabili censuarie ISTAT, converte le sezioni da UTM 32N a WGS84, le semplifica e scrive `data/eta_rete.geojson`. Il workflow `.github/workflows/eta-rete.yml` lo esegue su GitHub.
+
+Il pannello riporta anche i materiali della rete provinciale dal [Piano d'ambito ATERSIR](https://www.atersir.it/atti-documenti/piano-dambito-della-provincia-di-ravenna-ex-ato-7) (dati 2007): fibrocemento 34%, PVC 28%, PEAD 18%, ghisa sferoidale 9%, acciaio 2%, ghisa grigia 0,6%, non noto 7%.
+
 ## Strumenti open source usati
 
 | Componente | Strumento | Licenza |
@@ -37,6 +45,7 @@ Il pannello «Previsione prossimi guasti» (`js/previsione.js`) calcola nel brow
 | Notizie | Google News RSS + feed RSS configurabili | – |
 | Meteo | [Open-Meteo](https://open-meteo.com) | CC BY 4.0 |
 | Terremoti | [INGV FDSN web services](https://webservices.ingv.it) | CC BY 4.0 |
+| Edifici per epoca | [ISTAT, Censimento 2011](https://www.istat.it/it/archivio/104317) | CC BY 4.0 |
 | Script | Python 3, solo libreria standard | – |
 
 ## Avvio

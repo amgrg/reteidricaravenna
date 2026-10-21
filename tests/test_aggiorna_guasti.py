@@ -21,6 +21,23 @@ class TestEstrazione(unittest.TestCase):
         self.assertEqual(ag.estrai_vie(t), ["viale Farini", "piazzetta Anna Magnani", "via dell'Antico Squero"])
         self.assertEqual(ag.estrai_vie("Rottura in viale dei Navigatori a Punta Marina"), ["viale dei Navigatori"])
         self.assertEqual(ag.estrai_vie("i tecnici sono in via di ultimazione"), [])
+        # Titoli reali del 19-20/10/2026: il nome non prosegue oltre la punteggiatura.
+        self.assertEqual(ag.estrai_vie("Ravenna, tubatura rotta: allagato un tratto di via Baccarini. Residenti e attività senz'acqua"),
+                         ["via Baccarini"])
+
+    def test_varianti_via(self):
+        self.assertEqual(ag.varianti_via("via Baccarini Dove"), ["via Baccarini Dove", "via Baccarini"])
+        # Il nome completo viene sempre provato per primo; non si chiude mai su un connettore.
+        self.assertEqual(ag.varianti_via("via dell'Antico Squero")[0], "via dell'Antico Squero")
+        self.assertEqual(ag.varianti_via("viale dei Navigatori"), ["viale dei Navigatori"])
+
+    def test_localizza_accorcia_la_via(self):
+        class GeoFinto:
+            def cerca(self, testo):
+                return {"lat": 44.41, "lon": 12.2, "nome": "Via Alfredo Baccarini"} if testo == "via Baccarini" else None
+        notizia = {"titolo": "Condotta rotta in via Baccarini Dove sono le autobotti", "testo": ""}
+        hit, precisione, luogo = ag.localizza(notizia, GeoFinto(), [])
+        self.assertEqual((precisione, luogo), ("via", "via Baccarini"))
 
     def test_estrai_localita(self):
         self.assertEqual(ag.estrai_localita("Guasto a Lido di Classe", LOCALITA), ["Lido di Classe"])

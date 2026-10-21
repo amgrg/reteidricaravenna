@@ -2,14 +2,20 @@
   "type": "FeatureCollection",
   "metadata": {
     "titolo": "Guasti alla rete idrica di Ravenna geolocalizzati dalle notizie",
-    "aggiornato": "2026-10-20",
+    "aggiornato": "2026-10-21",
     "geocoder": "Nominatim (OpenStreetMap) - Data © OpenStreetMap contributors, ODbL 1.0",
     "note": "Posizioni ricavate dal testo delle notizie: indicano la via o la località citata, non il punto esatto della rottura. Il campo 'precisione' indica il livello di dettaglio."
   },
   "features": [
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.2006782, 44.4122109] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2006782,
+          44.4122109
+        ]
+      },
       "properties": {
         "id": "2026-10-19-via-baccarini",
         "titolo": "Rottura dorsale in ghisa in via Baccarini",
@@ -25,16 +31,58 @@
         "descrizione": "Via allagata. Dalle 21 del 19 ottobre Hera ha sospeso l'erogazione in tutta l'area urbana per sostituire il tratto danneggiato; tre autobotti attive, una per l'ospedale. Lavori completati nella notte tra il 19 e il 20 ottobre.",
         "origine": "manuale",
         "fonti": [
-          { "titolo": "Ravenna Notizie - Stop all'acqua in tutta l'area urbana", "url": "https://www.ravennanotizie.it/2026/10/19/dalle-21-stop-allacqua-in-tutta-larea-urbana-di-ravenna-hera-interviene-sulla-condotta-rotta-in-via-baccarini-dove-sono-le-autobotti/625670" },
-          { "titolo": "Ravenna Notizie - L'acqua torna a scorrere", "url": "https://www.ravennanotizie.it/2026/10/20/lacqua-torna-a-scorrere-dai-rubinetti-di-tutta-ravenna-riparata-nella-notte-la-condotta-idrica-rotta/625675" },
-          { "titolo": "Comune di Ravenna - Hera al lavoro in via Baccarini", "url": "https://comune.ravenna.it/novita/news/hera-al-lavoro-per-riparare-una-rottura-sulla-rete-idrica-in-via-baccarini/" },
-          { "titolo": "RavennaToday - Completata la sostituzione", "url": "https://www.ravennatoday.it/cronaca/rottura-tubatura-idrica-via-baccarini-completato-intervento-html.html" }
+          {
+            "titolo": "Ravenna Notizie - Stop all'acqua in tutta l'area urbana",
+            "url": "https://www.ravennanotizie.it/2026/10/19/dalle-21-stop-allacqua-in-tutta-larea-urbana-di-ravenna-hera-interviene-sulla-condotta-rotta-in-via-baccarini-dove-sono-le-autobotti/625670"
+          },
+          {
+            "titolo": "Ravenna Notizie - L'acqua torna a scorrere",
+            "url": "https://www.ravennanotizie.it/2026/10/20/lacqua-torna-a-scorrere-dai-rubinetti-di-tutta-ravenna-riparata-nella-notte-la-condotta-idrica-rotta/625675"
+          },
+          {
+            "titolo": "Comune di Ravenna - Hera al lavoro in via Baccarini",
+            "url": "https://comune.ravenna.it/novita/news/hera-al-lavoro-per-riparare-una-rottura-sulla-rete-idrica-in-via-baccarini/"
+          },
+          {
+            "titolo": "RavennaToday - Completata la sostituzione",
+            "url": "https://www.ravennatoday.it/cronaca/rottura-tubatura-idrica-via-baccarini-completato-intervento-html.html"
+          },
+          {
+            "titolo": "Ravenna, via Baccarini allagata: l’acqua scorre come un fiume lungo la via. - RomagnaNotizie (RomagnaNotizie)",
+            "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxObXdMT1Fzclo5dDF2amRYQXVralNieW1SUER1SkEzMjNqbG9aZmJUdExvUEo5Nk0tXzYwbjV3N3o5aVRWdVh2UWlha1FpSlA1dkQ4VXhjanllUktfRjhIX01Rbk5fd2F3VE02M2V6LXRVOHpyRFp3dVNZWDlxbG9MdW5rS2dQN1ZVRElQZ3gyRGZwU1pRQXdRamVzaE03bWRfRXBEaEdEMzlaR0JwUEpvbVVEV3lrZEdYY09Hd0tCX0h3RjNnRkNodFdoZ0xEMjZvMnl1SFhJeVQxeTlVTkNv?oc=5"
+          },
+          {
+            "titolo": "Ravenna, via Baccarini allagata: l’acqua scorre come un fiume, per un guasto ad una condotta principale - Ravenna Notizie (Ravenna Notizie)",
+            "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNcHVINUhmdkFRbGhfbzJfX2k0c2dkbXNRLUJRNUlCR21nTnp1RWJObWUwQWVETC1XanBmaE51WktlS0U4QnZmanY2a3o1NEh6bHpyQ3pNZnRXZTUxaTNsWHVONTlGTGFWcnhNNmhSai1xQ3k5WWJnWlh0OU1pTU92TFU0RzNjUTM0STZXRGRVV0xjUWdkaXRVTE1laXpaczRnTlVTOUtsSUZqRDNRRDV6eEpucy0tX0JrcjRja3VPUzd4M3lfcGFBb0RIU2J3VFJocmhXQ3dMYWJlal84YWZlckxn?oc=5"
+          },
+          {
+            "titolo": "Ravenna, rottura alla rete idrica in via Baccarini: disagi in centro per il guasto - Corriere Romagna (Corriere Romagna)",
+            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdTFDVFNZZERkTWtZTW53Wm5iY2lfMGxmYWpvU1MwQzFGRFBDcGdITzZoTGpTRXlacU9NTjk1NzNUYmhmcThBeTRwdXc5QkdrNUNSMDBFUkFIdVl6bjlGcjZvSDFLR1BUMHZaZzI2WFpLMXhRZ0owLU01emNQM1BzQzd5NHluRTRNM3pMR2ZRcWtXLUZXWTFod3YtS1ZzLWoybnZMdC1jZWtDdTNLeUR0VGlXa1REbTc2Qlg5b1FfSTBUSTgxTUVrMw?oc=5"
+          },
+          {
+            "titolo": "Ravenna, proseguono le attività di riparazione della rete idrica in Via Baccarini: lavori definitivi nella notte. Interruzione dalle 21 - GiornaleSM (GiornaleSM)",
+            "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxObEZjRmtyZEdfcmxNdFotLTJVNnIxQ0Y4YXJwSlpCck5JMFNFaUFzZ3BOd2pxZTI1VkZtNHJ3QmlVZUJOVlFSVGd5TWJtR0tmX083Q0lxVEM4a0RXZWZYZXZZZ3llRXJMdmNMS0VLSEhLdzlZVGE1bVp2dFlJaEI4Z1RieENHUF9udmhPTEkyNTA5RmVsQkZoSHBxbUlDMDhGTVhmYmdMRFFlenlMMzdYRFhwUWtIbFExYVFTNndHTHlfeC1qS3J6UlprT3hVRWQ0UUg2d2lMdE9HTElvVTJ3UzVjTFRKVkpVOTZoXw?oc=5"
+          },
+          {
+            "titolo": "Rottura sulla rete idrica in via Baccarini: tecnici Hera al lavoro, previste interruzioni notturne - Ravenna24ore.it (Ravenna24ore.it)",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxObENMcm8xbmwwNmh2bElNRGl5TlRBVWpqLU1WUFAxMndEUlo3SlRkeDNDVTdZNzJaU2dwaDlSVzkwMjktcWdvVWpXS3JfdFlDSktFUHIzVEItOXpmODE0dXJ2ZmxRMENjRHluTTRsb3hLUm4tQklWTnRNVktWaUlQeVdnV0twZUlqMC1WY1FyTGlhaXN6QWt1Vy1iYXFnQ19rX1E1U3NmczZsMmdsRF9KYWFsTjZWUnhQQ2VRWkhB?oc=5"
+          },
+          {
+            "titolo": "Ravenna rottura della condotta idrica in via Baccarini: completata nella notte la sostituzione della tubazione - Sestopotere (Sestopotere)",
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOb3BETVFRajFYd1BfSU04bUpsaGpxYkJHRkZOTnEzbVFuTUFxU2s2WkhOd3ZZT1RibmxzRDhmbjJrUmNDOU82SEdVdEZhMGNLRlZyb1R0SkFYODVDZl9Bc3dxSmdZeTNRN2syeVRuRHlsRzJVNnpqVlBvTVdlQVBZazJjOXc0OXVGTlRKWmVqSmpOSEQwN2c1STNvYWRfYzktblo4WklaMHFUeTF3dFRYamRQMnAxNzNiOUc4SENRMUVLelBHY2NSeGtxNFMxdU0?oc=5"
+          }
         ]
       }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.2361193, 44.3784145] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2361193,
+          44.3784145
+        ]
+      },
       "properties": {
         "id": "2026-08-07-classe-romea-sud",
         "titolo": "Rottura condotta in via Romea Sud a Classe",
@@ -50,13 +98,22 @@
         "descrizione": "Circa 300 utenze senz'acqua. Hera ha poi comunicato il completamento dei lavori e il ripristino dell'erogazione.",
         "origine": "manuale",
         "fonti": [
-          { "titolo": "Ravenna Notizie - Intervento urgente di Hera a Classe", "url": "https://www.ravennanotizie.it/2026/08/07/intervento-urgente-di-hera-sulla-rete-idrica-a-classe-di-ravenna/617358" }
+          {
+            "titolo": "Ravenna Notizie - Intervento urgente di Hera a Classe",
+            "url": "https://www.ravennanotizie.it/2026/08/07/intervento-urgente-di-hera-sulla-rete-idrica-a-classe-di-ravenna/617358"
+          }
         ]
       }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.0826, 44.4683] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.0826,
+          44.4683
+        ]
+      },
       "properties": {
         "id": "2026-05-19-mezzano-alfonsine",
         "titolo": "Guasto alla condotta DN400 tra Mezzano e Alfonsine",
@@ -72,14 +129,26 @@
         "descrizione": "Danno a una condotta DN400: disservizi a parte di Mezzano e delle frazioni di Glorie, Santerno e Ammonite, cali di pressione lungo la Via Reale. Servizio ripristinato nella notte. Posizione approssimata tra gli abitati citati.",
         "origine": "manuale",
         "fonti": [
-          { "titolo": "Ravenna Notizie - Ripristinato il servizio idrico", "url": "https://www.ravennanotizie.it/2026/05/20/ripristinato-il-servizio-idrico-dopo-il-guasto-alla-condotta-tra-mezzano-e-alfonsine-intervento-hera-concluso/607853" },
-          { "titolo": "Emilia Romagna News 24", "url": "https://www.emiliaromagnanews24.it/ravenna-guasto-alla-condotta-idrica-tra-mezzano-e-alfonsine-per-un-danno-da-sfalcio-387354.html" }
+          {
+            "titolo": "Ravenna Notizie - Ripristinato il servizio idrico",
+            "url": "https://www.ravennanotizie.it/2026/05/20/ripristinato-il-servizio-idrico-dopo-il-guasto-alla-condotta-tra-mezzano-e-alfonsine-intervento-hera-concluso/607853"
+          },
+          {
+            "titolo": "Emilia Romagna News 24",
+            "url": "https://www.emiliaromagnanews24.it/ravenna-guasto-alla-condotta-idrica-tra-mezzano-e-alfonsine-per-un-danno-da-sfalcio-387354.html"
+          }
         ]
       }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.2729458, 44.5139861] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2729458,
+          44.5139861
+        ]
+      },
       "properties": {
         "id": "2026-04-24-lidi-nord",
         "titolo": "Doppio guasto sulla condotta dei lidi nord",
@@ -95,14 +164,26 @@
         "descrizione": "Carenze d'acqua a Casalborsetti, Marina Romea e Porto Corsini, tra cui campeggio e maneggio di Marina Romea. Due autobotti attivate. Le vie non sono indicate: posizione al centro di Marina Romea.",
         "origine": "manuale",
         "fonti": [
-          { "titolo": "Risveglio Duemila - Guasto alla rete idrica sui lidi", "url": "https://risveglioduemila.it/2026/04/guasto-alla-rete-idrica-sui-lidi-carenze-dacqua-a-marina-romea-e-casalborsetti/" },
-          { "titolo": "il Resto del Carlino - Doppio guasto sul litorale", "url": "https://www.ilrestodelcarlino.it/ravenna/cronaca/zone-senza-acqua-oggi-hera-al-lavoro-per-risolvere-il-doppio-guasto-sul-litorale-ed10607f" }
+          {
+            "titolo": "Risveglio Duemila - Guasto alla rete idrica sui lidi",
+            "url": "https://risveglioduemila.it/2026/04/guasto-alla-rete-idrica-sui-lidi-carenze-dacqua-a-marina-romea-e-casalborsetti/"
+          },
+          {
+            "titolo": "il Resto del Carlino - Doppio guasto sul litorale",
+            "url": "https://www.ilrestodelcarlino.it/ravenna/cronaca/zone-senza-acqua-oggi-hera-al-lavoro-per-risolvere-il-doppio-guasto-sul-litorale-ed10607f"
+          }
         ]
       }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.2012262, 44.4115366] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2012262,
+          44.4115366
+        ]
+      },
       "properties": {
         "id": "2026-01-15-borgo-san-rocco",
         "titolo": "Rottura in piazzetta Anna Magnani (Borgo San Rocco)",
@@ -118,36 +199,22 @@
         "descrizione": "Circa cento utenze interessate. Lavoro complicato dalla profondità della rete e dalle auto in sosta. Meno di 24 ore dopo il guasto di viale Farini.",
         "origine": "manuale",
         "fonti": [
-          { "titolo": "La Cronaca di Ravenna - 15 gennaio 2026", "url": "https://stampa.lacronacadiravenna.it/stampa/18389/articoli" }
+          {
+            "titolo": "La Cronaca di Ravenna - 15 gennaio 2026",
+            "url": "https://stampa.lacronacadiravenna.it/stampa/18389/articoli"
+          }
         ]
       }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.2046984, 44.4186024] },
-      "properties": {
-        "id": "2026-01-14-viale-farini",
-        "titolo": "Rottura di una condotta principale in viale Farini",
-        "data": "2026-01-14",
-        "localita": "Ravenna, zona stazione",
-        "indirizzo": "Viale Luigi Carlo Farini",
-        "precisione": "via",
-        "causa": "Rottura di una delle condotte principali che portano acqua alla città",
-        "materiale": null,
-        "utenze": null,
-        "impatto": "alto",
-        "stato": "risolto",
-        "descrizione": "Gran parte della città senz'acqua tra la notte del 13-14 gennaio e la mattina successiva. Ospedali riforniti con alimentazioni dedicate, autobotti per le scuole. Hera cita le recenti scosse sismiche tra le possibili concause.",
-        "origine": "manuale",
-        "fonti": [
-          { "titolo": "Comune di Ravenna - Rottura di una delle condotte principali", "url": "https://comune.ravenna.it/novita/comunicato-stampa/rottura-di-una-delle-condotte-principali-che-portano-acqua-alla-citta-intervento-in-corso-per-la-riparazione/" },
-          { "titolo": "La Cronaca di Ravenna - Tubatura rotta in viale Farini", "url": "https://lacronacadiravenna.it/articolo/18384/Ore-1-20-Tubatura-dell-acqua-rotta-in-viale-Farini-Erogazione-sospesa-o-in-bassa-pressione-in-alcune-zone-della-citta" }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2859935,
+          44.4374893
         ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.2859935, 44.4374893] },
+      },
       "properties": {
         "id": "2026-01-15-punta-marina",
         "titolo": "Rottura a Punta Marina (viale dei Navigatori)",
@@ -163,13 +230,22 @@
         "descrizione": "Una delle rotture successive al guasto di viale Farini; erogazione già ripristinata il 15 gennaio.",
         "origine": "manuale",
         "fonti": [
-          { "titolo": "La Cronaca di Ravenna - 15 gennaio 2026", "url": "https://stampa.lacronacadiravenna.it/stampa/18389/articoli" }
+          {
+            "titolo": "La Cronaca di Ravenna - 15 gennaio 2026",
+            "url": "https://stampa.lacronacadiravenna.it/stampa/18389/articoli"
+          }
         ]
       }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.2087488, 44.4222787] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2087488,
+          44.4222787
+        ]
+      },
       "properties": {
         "id": "2026-01-15-antico-squero",
         "titolo": "Rottura in via dell'Antico Squero (Darsena)",
@@ -185,13 +261,22 @@
         "descrizione": "Una delle rotture successive al guasto di viale Farini; erogazione già ripristinata il 15 gennaio.",
         "origine": "manuale",
         "fonti": [
-          { "titolo": "La Cronaca di Ravenna - 15 gennaio 2026", "url": "https://stampa.lacronacadiravenna.it/stampa/18389/articoli" }
+          {
+            "titolo": "La Cronaca di Ravenna - 15 gennaio 2026",
+            "url": "https://stampa.lacronacadiravenna.it/stampa/18389/articoli"
+          }
         ]
       }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.0855421, 44.466022] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.0855421,
+          44.466022
+        ]
+      },
       "properties": {
         "id": "2026-01-15-mezzano",
         "titolo": "Rottura a Mezzano",
@@ -207,13 +292,57 @@
         "descrizione": "Una delle rotture successive al guasto di viale Farini; via non indicata, posizione al centro dell'abitato.",
         "origine": "manuale",
         "fonti": [
-          { "titolo": "La Cronaca di Ravenna - 15 gennaio 2026", "url": "https://stampa.lacronacadiravenna.it/stampa/18389/articoli" }
+          {
+            "titolo": "La Cronaca di Ravenna - 15 gennaio 2026",
+            "url": "https://stampa.lacronacadiravenna.it/stampa/18389/articoli"
+          }
         ]
       }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.3031010, 44.4118544] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2046984,
+          44.4186024
+        ]
+      },
+      "properties": {
+        "id": "2026-01-14-viale-farini",
+        "titolo": "Rottura di una condotta principale in viale Farini",
+        "data": "2026-01-14",
+        "localita": "Ravenna, zona stazione",
+        "indirizzo": "Viale Luigi Carlo Farini",
+        "precisione": "via",
+        "causa": "Rottura di una delle condotte principali che portano acqua alla città",
+        "materiale": null,
+        "utenze": null,
+        "impatto": "alto",
+        "stato": "risolto",
+        "descrizione": "Gran parte della città senz'acqua tra la notte del 13-14 gennaio e la mattina successiva. Ospedali riforniti con alimentazioni dedicate, autobotti per le scuole. Hera cita le recenti scosse sismiche tra le possibili concause.",
+        "origine": "manuale",
+        "fonti": [
+          {
+            "titolo": "Comune di Ravenna - Rottura di una delle condotte principali",
+            "url": "https://comune.ravenna.it/novita/comunicato-stampa/rottura-di-una-delle-condotte-principali-che-portano-acqua-alla-citta-intervento-in-corso-per-la-riparazione/"
+          },
+          {
+            "titolo": "La Cronaca di Ravenna - Tubatura rotta in viale Farini",
+            "url": "https://lacronacadiravenna.it/articolo/18384/Ore-1-20-Tubatura-dell-acqua-rotta-in-viale-Farini-Erogazione-sospesa-o-in-bassa-pressione-in-alcune-zone-della-citta"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.303101,
+          44.4118544
+        ]
+      },
       "properties": {
         "id": "2024-07-11-via-bonifica",
         "titolo": "Disservizi per i lavori di collegamento in via Bonifica",
@@ -229,13 +358,22 @@
         "descrizione": "Disservizi a Lido di Dante, Classe, Fosso Ghiaia, Ponte Nuovo, Marina di Ravenna, Lido Adriano, Madonna dell'Albero e San Bartolo.",
         "origine": "manuale",
         "fonti": [
-          { "titolo": "RavennaToday - Diverse zone della città senz'acqua", "url": "https://www.ravennatoday.it/cronaca/manca-acqua-citta-forese--oggi-hera.html" }
+          {
+            "titolo": "RavennaToday - Diverse zone della città senz'acqua",
+            "url": "https://www.ravennatoday.it/cronaca/manca-acqua-citta-forese--oggi-hera.html"
+          }
         ]
       }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.1826024, 44.4115707] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.1826024,
+          44.4115707
+        ]
+      },
       "properties": {
         "id": "2023-09-22-fiume-montone-abbandonato",
         "titolo": "Tubatura rotta in via Fiume Montone Abbandonato",
@@ -251,7 +389,10 @@
         "descrizione": "Circa mille utenze senz'acqua durante la riparazione, conclusa in giornata.",
         "origine": "manuale",
         "fonti": [
-          { "titolo": "il Resto del Carlino - In mille restano all'asciutto", "url": "https://www.ilrestodelcarlino.it/ravenna/cronaca/si-rompe-una-tubatura-in-mille-restano-allasciutto-70478b16" }
+          {
+            "titolo": "il Resto del Carlino - In mille restano all'asciutto",
+            "url": "https://www.ilrestodelcarlino.it/ravenna/cronaca/si-rompe-una-tubatura-in-mille-restano-allasciutto-70478b16"
+          }
         ]
       }
     }

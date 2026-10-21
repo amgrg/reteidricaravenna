@@ -96,6 +96,28 @@
         </details>
       </section>
 
+      <section class="blocco eta">
+        <h2>Età probabile della rete</h2>
+        <p class="nota" id="stato-eta">Caricamento…</p>
+        <label class="check"><input id="mostra-eta" type="checkbox"> Mostra sulla mappa</label>
+        <ul class="legenda-eta" id="legenda-eta"></ul>
+        <details class="metodo">
+          <summary>Da dove viene la stima</summary>
+          <p>Le condotte di distribuzione si posano di solito quando si costruisce un quartiere. Per ogni sezione di censimento (pochi isolati) la mappa mostra quindi l'anno medio di costruzione degli edifici residenziali (<a href="https://www.istat.it/it/archivio/104317" target="_blank" rel="noopener">ISTAT, Censimento 2011</a>). Non tiene conto delle condotte sostituite dopo la posa, dato che Hera non pubblica. Il colore è più tenue nelle sezioni rurali con poche case sparse, dove la rete è scarsa.</p>
+          <p>Materiali della rete nella provincia di Ravenna (3.380 km, dati al 2007, <a href="https://www.atersir.it/atti-documenti/piano-dambito-della-provincia-di-ravenna-ex-ato-7" target="_blank" rel="noopener">Piano d'ambito ATERSIR</a>):</p>
+          <table class="materiali">
+            <tr><td>Fibrocemento (cemento-amianto)</td><td>1.154 km</td><td>34%</td></tr>
+            <tr><td>PVC</td><td>951 km</td><td>28%</td></tr>
+            <tr><td>PEAD (polietilene)</td><td>601 km</td><td>18%</td></tr>
+            <tr><td>Ghisa sferoidale</td><td>301 km</td><td>9%</td></tr>
+            <tr><td>Non noto</td><td>250 km</td><td>7%</td></tr>
+            <tr><td>Acciaio</td><td>75 km</td><td>2%</td></tr>
+            <tr><td>Ghisa grigia</td><td>21 km</td><td>0,6%</td></tr>
+            <tr><td>Altro</td><td>26 km</td><td>0,8%</td></tr>
+          </table>
+        </details>
+      </section>
+
       <section class="blocco legenda">
         <h2>Rete idrica (OpenStreetMap)</h2>
         <p class="nota" id="stato-rete">Caricamento…</p>
@@ -115,6 +137,7 @@
         Rete via <a href="https://overpass-api.de/">Overpass API</a> ·
         Meteo <a href="https://open-meteo.com/">Open-Meteo</a> ·
         Terremoti <a href="https://terremoti.ingv.it/">INGV</a> ·
+        Edifici <a href="https://www.istat.it/">ISTAT</a> (CC BY 4.0) ·
         <a href="https://leafletjs.com/">Leaflet</a>.<br>
         Guasti in tempo reale: Pronto Intervento Hera <a href="tel:800713900">800 713 900</a>.
       </footer>
