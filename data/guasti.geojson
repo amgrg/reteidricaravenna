@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "metadata": {
     "titolo": "Guasti alla rete idrica di Ravenna geolocalizzati dalle notizie",
-    "aggiornato": "2026-10-21",
+    "aggiornato": "2026-10-22",
     "geocoder": "Nominatim (OpenStreetMap) - Data © OpenStreetMap contributors, ODbL 1.0",
     "note": "Posizioni ricavate dal testo delle notizie: indicano la via o la località citata, non il punto esatto della rottura. Il campo 'precisione' indica il livello di dettaglio."
   },
@@ -70,6 +70,14 @@
           {
             "titolo": "Ravenna rottura della condotta idrica in via Baccarini: completata nella notte la sostituzione della tubazione - Sestopotere (Sestopotere)",
             "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOb3BETVFRajFYd1BfSU04bUpsaGpxYkJHRkZOTnEzbVFuTUFxU2s2WkhOd3ZZT1RibmxzRDhmbjJrUmNDOU82SEdVdEZhMGNLRlZyb1R0SkFYODVDZl9Bc3dxSmdZeTNRN2syeVRuRHlsRzJVNnpqVlBvTVdlQVBZazJjOXc0OXVGTlRKWmVqSmpOSEQwN2c1STNvYWRfYzktblo4WklaMHFUeTF3dFRYamRQMnAxNzNiOUc4SENRMUVLelBHY2NSeGtxNFMxdU0?oc=5"
+          },
+          {
+            "titolo": "Ravenna, tubatura rotta: allagato un tratto di via Baccarini. Residenti e attività senz'acqua corrente - FOTO - Ravenna e Dintorni (Ravenna e Dintorni)",
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTGptN2huSjNMa0l5NGJTd3hvN1dJNlU4Z01LOWt2NDFmbENWMW5GdnQ4T2piWTJRRmpRSmZoQnpWa3pTUTNoNFJJOHBaVEcxcU1BTjVQWHE4OXU2ZEVCcmVQaDlkZXNhMElUWHZIdWRCVmFDTGdoQUJKck00NFJGYWFCcFNlN1hMRHM2bTRiZVk?oc=5"
+          },
+          {
+            "titolo": "Dalle 21 stop all'acqua in tutta l'area urbana di Ravenna: Hera interviene sulla condotta rotta in via Baccarini. Dove sono le autobotti - Ravenna Notizie (Ravenna Notizie)",
+            "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQNExPeTVBRTE3NGhnSjI1cl9tc0pKSTZmTzdfQ1RwS1pBRWlrNmJ4UmUzb1BqNUhSUnJieDAwTWxfM1lKRklmbkwzR21zZXF0WVU5dlJYTlNwMzc1SVh1VlBIZEwxUDhxaW15b01yUk9PMmY5a205X3JVMk5TRG9UVzIydERFQTRaVlkxWDBBNGtjUzJ6N2lKTjFSdGtmcFM2U3lsb3J2M0NVRzBhaURjQlh3ZGNWWk1YblBHQ2lLVWgyNGlBQ2JBV0VfQkZLNmdLYmxTSUZTOHdrbnk0SUlXOUNiREg3R2FMZ2RTYlNyd3p5Q2kxbUdBS1RXTnVxVXRCUnVja2N4OHJVTVpwZ3c?oc=5"
           }
         ]
       }
