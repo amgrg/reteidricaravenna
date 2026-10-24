@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "metadata": {
     "titolo": "Guasti alla rete idrica di Ravenna geolocalizzati dalle notizie",
-    "aggiornato": "2026-10-22",
+    "aggiornato": "2026-10-24",
     "geocoder": "Nominatim (OpenStreetMap) - Data © OpenStreetMap contributors, ODbL 1.0",
     "note": "Posizioni ricavate dal testo delle notizie: indicano la via o la località citata, non il punto esatto della rottura. Il campo 'precisione' indica il livello di dettaglio."
   },
@@ -78,6 +78,10 @@
           {
             "titolo": "Dalle 21 stop all'acqua in tutta l'area urbana di Ravenna: Hera interviene sulla condotta rotta in via Baccarini. Dove sono le autobotti - Ravenna Notizie (Ravenna Notizie)",
             "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQNExPeTVBRTE3NGhnSjI1cl9tc0pKSTZmTzdfQ1RwS1pBRWlrNmJ4UmUzb1BqNUhSUnJieDAwTWxfM1lKRklmbkwzR21zZXF0WVU5dlJYTlNwMzc1SVh1VlBIZEwxUDhxaW15b01yUk9PMmY5a205X3JVMk5TRG9UVzIydERFQTRaVlkxWDBBNGtjUzJ6N2lKTjFSdGtmcFM2U3lsb3J2M0NVRzBhaURjQlh3ZGNWWk1YblBHQ2lLVWgyNGlBQ2JBV0VfQkZLNmdLYmxTSUZTOHdrbnk0SUlXOUNiREg3R2FMZ2RTYlNyd3p5Q2kxbUdBS1RXTnVxVXRCUnVja2N4OHJVTVpwZ3c?oc=5"
+          },
+          {
+            "titolo": "ULTIMA ORA: Rottura della condotta idrica in via Baccarini a Ravenna. Completata nella notte la sostituzione della tubazione - Ravenna Web Tv (Ravenna Web Tv)",
+            "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNYlo3cHpuWHUtdGFfX0diUXk3ZWhCcG1GUVdROUdQd0xrT2RrdlJUTWp1a0w4V0M0R0VtVU9jeEIzU3JvU3VTWkY4ci1STHgtdzd0ZTJTZ28wWC0zeEZwM3VRTU1VRkZHOExXZWFwcjBtLUdsVU9Kc0wxYk05d1g0dkM4WXdEVVdZTFN3eGphcjlXNEVGRTBabzNhXzFRNzA3Zm9ZM1NxeHF2b0E2SmhzclBzM3JXMHhCLWpKVEV6MUZCaHRvYUhxRTVHNms4d0lySjgyZmxCNkRFdUpxWnprcThtMXUxdw?oc=5"
           }
         ]
       }
