@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "metadata": {
     "titolo": "Guasti alla rete idrica di Ravenna geolocalizzati dalle notizie",
-    "aggiornato": "2026-10-24",
+    "aggiornato": "2026-10-27",
     "geocoder": "Nominatim (OpenStreetMap) - Data © OpenStreetMap contributors, ODbL 1.0",
     "note": "Posizioni ricavate dal testo delle notizie: indicano la via o la località citata, non il punto esatto della rottura. Il campo 'precisione' indica il livello di dettaglio."
   },
@@ -82,6 +82,10 @@
           {
             "titolo": "ULTIMA ORA: Rottura della condotta idrica in via Baccarini a Ravenna. Completata nella notte la sostituzione della tubazione - Ravenna Web Tv (Ravenna Web Tv)",
             "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNYlo3cHpuWHUtdGFfX0diUXk3ZWhCcG1GUVdROUdQd0xrT2RrdlJUTWp1a0w4V0M0R0VtVU9jeEIzU3JvU3VTWkY4ci1STHgtdzd0ZTJTZ28wWC0zeEZwM3VRTU1VRkZHOExXZWFwcjBtLUdsVU9Kc0wxYk05d1g0dkM4WXdEVVdZTFN3eGphcjlXNEVGRTBabzNhXzFRNzA3Zm9ZM1NxeHF2b0E2SmhzclBzM3JXMHhCLWpKVEV6MUZCaHRvYUhxRTVHNms4d0lySjgyZmxCNkRFdUpxWnprcThtMXUxdw?oc=5"
+          },
+          {
+            "titolo": "Rottura sulla rete idrica in via Baccarini: tecnici Hera al lavoro, previste interruzioni notturne - Ravenna24ore.it (Ravenna24ore.it)",
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPOXpmaUlCSjVqZTRtaWlTUDVzU3M2M0xKNkhEbzdqclpFRWdEZmFSNC1BOU4ydy13ZHVfWTBOZExGT0V2VHNzNDRlSVJMM1E3eXR4MGJWOTVla1dheUhjU2J6a0g2bjJqZVFQY1V6eW9La3lWUzJfdEdURFJkb2pKN0cyVFhFTW4xbTE0ekFJRlNBRjlUc0ExQmUxRFVoUVAya1kzaGVXZDF5cFNlTkMtQ3hRR3lycHlXMUE?oc=5"
           }
         ]
       }
