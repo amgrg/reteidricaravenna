@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "metadata": {
     "titolo": "Guasti alla rete idrica di Ravenna geolocalizzati dalle notizie",
-    "aggiornato": "2026-10-27",
+    "aggiornato": "2026-10-29",
     "geocoder": "Nominatim (OpenStreetMap) - Data © OpenStreetMap contributors, ODbL 1.0",
     "note": "Posizioni ricavate dal testo delle notizie: indicano la via o la località citata, non il punto esatto della rottura. Il campo 'precisione' indica il livello di dettaglio."
   },
@@ -86,6 +86,10 @@
           {
             "titolo": "Rottura sulla rete idrica in via Baccarini: tecnici Hera al lavoro, previste interruzioni notturne - Ravenna24ore.it (Ravenna24ore.it)",
             "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPOXpmaUlCSjVqZTRtaWlTUDVzU3M2M0xKNkhEbzdqclpFRWdEZmFSNC1BOU4ydy13ZHVfWTBOZExGT0V2VHNzNDRlSVJMM1E3eXR4MGJWOTVla1dheUhjU2J6a0g2bjJqZVFQY1V6eW9La3lWUzJfdEdURFJkb2pKN0cyVFhFTW4xbTE0ekFJRlNBRjlUc0ExQmUxRFVoUVAya1kzaGVXZDF5cFNlTkMtQ3hRR3lycHlXMUE?oc=5"
+          },
+          {
+            "titolo": "Ravenna, Hera al lavoro per riparare una rottura sulla rete idrica in via Baccarini - Sestopotere (Sestopotere)",
+            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNWFdFSU9jQzJwSnMtMG9FS0phYTc5alNWcUgwYVBZNnBQaDQ4OXZ3dDVGVkZkVG9GY3V6ZUIwc2pNOXk3X3BxVnRkTFExSVNRWTIxT2JnMTdVRjlGLUpYaFNlcEVLZ1BST0ZNOHlYbW9KSHJrYzR2SnJ4QkdZcFZacDZqTUtuUFVvdnZ4bEYzVC1CWER0OHZfX0xqMjFCcFJlNU83MG4zWm9jT0U?oc=5"
           }
         ]
       }
