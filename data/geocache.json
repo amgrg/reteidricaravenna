@@ -1,4 +1,5 @@
 {
+ "strada ravennatoday": null,
  "via baccarini": {
   "indirizzo": "Via Alfredo Baccarini, San Rocco, Ravenna, Emilia-Romagna, 48121, Italia",
   "lat": 44.4149359,
@@ -7,5 +8,12 @@
   "tipo": "pedestrian"
  },
  "via baccarini dove": null,
- "via baccarini residenti": null
+ "via baccarini residenti": null,
+ "via caduti": {
+  "indirizzo": "Via Caduti, Castiglione di Ravenna, Ravenna, Emilia-Romagna, Italia",
+  "lat": 44.2591934,
+  "lon": 12.257659,
+  "nome": "Via Caduti",
+  "tipo": "unclassified"
+ }
 }

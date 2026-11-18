@@ -2,11 +2,42 @@
   "type": "FeatureCollection",
   "metadata": {
     "titolo": "Guasti alla rete idrica di Ravenna geolocalizzati dalle notizie",
-    "aggiornato": "2026-10-29",
+    "aggiornato": "2026-11-18",
     "geocoder": "Nominatim (OpenStreetMap) - Data © OpenStreetMap contributors, ODbL 1.0",
     "note": "Posizioni ricavate dal testo delle notizie: indicano la via o la località citata, non il punto esatto della rottura. Il campo 'precisione' indica il livello di dettaglio."
   },
   "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.257659,
+          44.2591934
+        ]
+      },
+      "properties": {
+        "id": "2026-11-05-via-caduti",
+        "titolo": "Via Caduti per la Libertà chiusa per una rottura della rete idrica: le deviazioni - Ravenna Notizie",
+        "data": "2026-11-05",
+        "localita": "Castiglione di Ravenna, Ravenna",
+        "indirizzo": "Via Caduti",
+        "precisione": "via",
+        "causa": null,
+        "materiale": null,
+        "utenze": null,
+        "impatto": "medio",
+        "stato": "da verificare",
+        "descrizione": "Via Caduti per la Libertà chiusa per una rottura della rete idrica: le deviazioni Ravenna Notizie",
+        "origine": "auto",
+        "fonti": [
+          {
+            "titolo": "Via Caduti per la Libertà chiusa per una rottura della rete idrica: le deviazioni - Ravenna Notizie (Ravenna Notizie)",
+            "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOcm54bl9KelNUaEJxRzUyMDFwZmFrOFZCXzlFX0lpd3cxaWwtRVVnSHhaN0wxNmx4MmhEN3RJcGJHNmpEVnhfSTJudjQ5aElnWjFoa1BzdkFUazNVTDJ4X2xKeVFIby04Vm5kaHRodmcza1RTcUh3Y3hTZ1d0RWtRQURoYVJoU0JDeHFiVklhOEpvcmYzclZDVUhTMjE5TVAtNlVRV0ZpTXNTcm9ZRzVQYllCdS13NDVEeVN1d3FkelNCQXBOZkJWTw?oc=5"
+          }
+        ]
+      }
+    },
     {
       "type": "Feature",
       "geometry": {
